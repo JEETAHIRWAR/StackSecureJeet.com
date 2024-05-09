@@ -1,37 +1,147 @@
 /* Navbar.scss */
+@use '../../_variables' as vars;
+
+
+
 
 .navbarContainer {
-  position: relative;
-  max-width: 66%;
+  width: 1060px;
   height: 100px;
-  top: 60px;
-  left: 460px;
   border-radius: 5px;
-  // background-color: #DAFFFB;
-  background-color: rgb(218,255,251,0.6);
-  // background: rgba(255, 255, 255, 0.1); 
-  // backdrop-filter: blur(10px); 
-  // box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); 
+  background: vars.$layoutBackground; 
+  backdrop-filter: vars.$glassBackground; 
+
+
+  .navbar-links {
+    max-width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    overflow-y: auto;
+    margin: 0px 20px 0px 20px;
+
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: vars.$transparentBG;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: vars.$defaultColor;
+      border-radius: 4px; /* Roundness of the scrollbar */
+    }
+    
+    &::-webkit-scrollbar-thumb:hover {
+      background: vars.$hoverColor;
+    }
+  }
+
+  .navLink {
+    text-decoration: none;
+    margin: 0px 20px 0px 20px;
+  }
+  
 }
 
 
-.navbar-links {
-  max-width: 100%;
-  height: 100px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  text-align: center;
-  align-items: center;
-  overflow-y: auto;
-  overflow: hidden;
-  margin: 0px 40px 0px 20px;
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .navbarContainer {
+    max-width: 100%;
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .navbar-links {
+    min-width: 400px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow-y: auto;
+  }
 }
 
-.navLink {
-  text-decoration: none;
-  margin: 0px 20px 0px 20px;
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {
+  .navbarContainer {
+      width: 96%;
+      min-height: 100px;
+    }
 }
+
+@media only screen and (min-width: 1025px) {
+  .navbarContainer {
+      width: 97%;
+      min-height: 100px;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+  .navbarContainer {
+      width: 100%;
+      min-height: 100px;
+    }
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .example {background: blue;}
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .example {background: orange;}
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .example {background: pink;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .navbar-links {
+//   max-width: 100%;
+//   height: 100px;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   text-align: center;
+//   align-items: center;
+//   overflow-y: auto;
+//   // overflow: hidden;
+//   margin: 0px 40px 0px 20px;
+// }
+
 
 
 

@@ -1,13 +1,185 @@
+@use '../../_variables' as vars;
+
+
 .profileContainer {
-    position: relative;
-    max-width: 25%;
-    height: 610px;
-    left: 50px;
-    top: -40px;
-    // background-color: #393646;
-    background-color: #2a303c;
-    background-color: rgb(42,48,60,0.9);
+    width: 350px;
+    height: 650px;
+    padding: 20px 0 20px 0;
+    background: vars.$layoutBackground;
+    backdrop-filter: vars.$glassBackground;
     border-radius: 5px;
+
+    div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .profileImageCon {
+        width: 250px;
+        height: 250px;
+        border: 2px solid vars.$defaultColor;
+        border-radius: 100%;
+        margin: 0 auto;
+
+        div {
+            width: 35px;
+            height: 35px;
+            border: 2px solid vars.$greyColor;
+            border-radius: 100%;
+            margin: 155px 0 0 225px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 26px;
+        }
+    }
+
+    h1 {
+        text-align: center;
+        color: vars.$defaultColor;
+        font-size: vars.$heading;
+        font-family: vars.$fontFamily3;
+        font-weight: 900;
+        letter-spacing: 1px;
+        line-height: 1.5;
+        margin-top: 10px;
+    }
+
+    p {
+        text-align: center;
+        color: vars.$hoverColor;
+        font-size: vars.$subHeading;
+        font-family: vars.$fontFamily1;
+        font-weight: 700;
+        letter-spacing: 1px;
+        line-height: 1.5;
+        text-transform: capitalize;
+        height: 40px;
+        // margin-left: 100px;
+
+        .cursor {
+            color: vars.$defaultColor;
+        }
+    }
+
+    .resumeBtn {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 10px;
+
+        .cta {
+            position: relative;
+            margin: auto;
+            padding: 12px 18px;
+            transition: all 0.2s ease;
+            border: none;
+            background: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cta:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            border-radius: 50px;
+            background: vars.$defaultColor;
+            width: 45px;
+            height: 45px;
+            transition: all 0.3s ease;
+        }
+    
+    
+        .cta span {
+            position: relative;
+            font-family: "Ubuntu", sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: whitesmoke;
+        }
+    
+        .cta svg {
+            position: relative;
+            top: 0;
+            margin-left: 10px;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            // stroke: #234567;
+            stroke: #0a1f1d;
+            stroke-width: 2;
+            transform: translateX(-5px);
+            transition: all 0.3s ease;
+        }
+    
+        .cta:hover:before {
+            width: 100%;
+            background: vars.$hoverColor;
+        }
+    
+        .cta:hover svg {
+            transform: translateX(0);
+        }
+    
+        .cta:active {
+            transform: scale(0.95);
+        }
+
+    }    
+
+
+
 }
 
 
+@media only screen and (max-width: 600px) {
+    .profileContainer {
+        min-width: 370px;
+        min-height: 500px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .profileContainer {
+        min-width: 370px;
+        min-height: 500px;
+    }
+}
+
+
+
+
+
+// // Media query for tablets (min-width: 768px)
+// @media screen and (min-width: 768px) {
+//     .profileContainer {
+//         max-width: 90%;
+//         left: 35px;
+//         top: 60px;
+//     }
+// }
+
+// // Media query for desktops (min-width: 1024px)
+// @media screen and (min-width: 1024px) {
+//     .profileContainer {
+//         max-width: 1024px;
+//     }
+// }
+
+// // Media query for larger desktops (min-width: 1200px)
+// @media screen and (min-width: 1200px) {
+//     .profileContainer {
+//         max-width: 1200px;
+//     }
+// }
