@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import './ProfileContainer.scss'
 import { Link, NavLink } from 'react-router-dom'
+import { MdVerified, MdEmail } from "react-icons/md";
+import { SiGooglemaps } from "react-icons/si";
+import { FaPhone, FaCalendarDays} from "react-icons/fa6";
+
+
+
+
+
 
 
 function ProfileContainer()
@@ -58,19 +66,58 @@ function ProfileContainer()
           <div>🤑</div>
         </div>
         <div>
-          <h1>Jeet Ahirwar</h1>
+          <div>
+            <h1>Jeet Ahirwar</h1>
+            <MdVerified className='text-violet-500 text-xl' />
+          </div>
           <p>{displayText}<span className="cursor">{showCursor ? '|' : ''}</span></p>
         </div>
         <div className="resumeBtn">
           <NavLink
             to="/resume"
-            className={({ isActive }) =>`cta  ${isActive ? "text-violet-500" : "text-green-500"}`}>
+            className={({ isActive }) => `cta  ${isActive ? "text-violet-500" : "text-green-500"}`}>
             <span>Resume</span>
             <svg width="15px" height="10px" viewBox="0 0 13 10">
               <path d="M1,5 L11,5"></path>
               <polyline points="8 1 12 5 8 9"></polyline>
             </svg>
           </NavLink>
+        </div>
+        <div className="socialMLinks">
+          <ul>
+            <li>
+              <span>
+                <SiGooglemaps />
+              </span>
+              <NavLink to="https://github.com/JEETAHIRWAR" className={({ isActive }) => `sLinks ${isActive ? "text-violet-500 " : "text-green-500 text-base"} hover:text-violet-500`}>
+                A-153 Danish Nagar Bhopal M.P. 464886 
+              </NavLink>
+            </li>
+            <li>
+              <span>
+                <FaPhone />
+              </span>
+              <NavLink to="https://github.com/JEETAHIRWAR" className={({ isActive }) => `sLinks ${isActive ? "text-violet-500 " : "text-green-500 text-base"} hover:text-violet-500`}>
+                (+91) 6264516309 
+              </NavLink>
+            </li>
+            <li>
+              <span>
+                <MdEmail />
+              </span>
+              <NavLink to="https://github.com/JEETAHIRWAR" className={({ isActive }) => `sLinks ${isActive ? "text-violet-500 " : "text-green-500 text-base"} hover:text-violet-500`}>
+                jeetahirwar664@gmail.com
+              </NavLink>
+            </li>
+            <li>
+              <span>
+                <FaCalendarDays />
+              </span>
+              <NavLink to="https://github.com/JEETAHIRWAR" className={({ isActive }) => `sLinks ${isActive ? "text-violet-500 " : "text-green-500"} hover:text-violet-500`}>
+                 26-June-2002
+              </NavLink>
+            </li>
+          </ul>
         </div>
         <div className="themesContainer">
         </div>

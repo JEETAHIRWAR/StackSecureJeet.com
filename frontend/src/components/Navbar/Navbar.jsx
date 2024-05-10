@@ -28,6 +28,7 @@ function Navbar()
         <nav className="navbar">
           <ul className="navbar-links">
             <li>
+              {/* <span className="tooltip">Home</span> */}
               <NavLink
                 to="Home"
                 className={({ isActive }) =>

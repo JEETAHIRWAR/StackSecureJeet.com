@@ -9,18 +9,35 @@
     backdrop-filter: vars.$glassBackground;
     border-radius: 5px;
 
-    div{
+    div {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
         margin-top: 10px;
+
+        div {
+            display: flex;
+            flex-direction: row;
+
+            h1 {
+                text-align: center;
+                color: vars.$defaultColor;
+                font-size: vars.$heading;
+                font-family: vars.$fontFamily3;
+                font-weight: 900;
+                letter-spacing: 1px;
+                line-height: 1.5;
+                margin-top: 10px;
+                margin-right: 8px;
+            }
+        }
     }
 
     .profileImageCon {
-        width: 250px;
-        height: 250px;
+        width: 210px;
+        height: 210px;
         border: 2px solid vars.$defaultColor;
         border-radius: 100%;
         margin: 0 auto;
@@ -30,7 +47,7 @@
             height: 35px;
             border: 2px solid vars.$greyColor;
             border-radius: 100%;
-            margin: 155px 0 0 225px;
+            margin: 120px 0 0 180px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -38,16 +55,6 @@
         }
     }
 
-    h1 {
-        text-align: center;
-        color: vars.$defaultColor;
-        font-size: vars.$heading;
-        font-family: vars.$fontFamily3;
-        font-weight: 900;
-        letter-spacing: 1px;
-        line-height: 1.5;
-        margin-top: 10px;
-    }
 
     p {
         text-align: center;
@@ -71,11 +78,12 @@
         flex-direction: row;
         justify-content: space-between;
         margin-top: 10px;
+        margin-bottom: 20px;
 
         .cta {
             position: relative;
             margin: auto;
-            padding: 12px 18px;
+            padding: 11px 16px;
             transition: all 0.2s ease;
             border: none;
             background: none;
@@ -94,21 +102,21 @@
             display: block;
             border-radius: 50px;
             background: vars.$defaultColor;
-            width: 45px;
-            height: 45px;
+            width: 43px;
+            height: 43px;
             transition: all 0.3s ease;
         }
-    
-    
+
+
         .cta span {
             position: relative;
             font-family: "Ubuntu", sans-serif;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             letter-spacing: 0.05em;
             color: whitesmoke;
         }
-    
+
         .cta svg {
             position: relative;
             top: 0;
@@ -116,27 +124,75 @@
             fill: none;
             stroke-linecap: round;
             stroke-linejoin: round;
-            // stroke: #234567;
-            stroke: #0a1f1d;
+            stroke: whitesmoke;
             stroke-width: 2;
             transform: translateX(-5px);
             transition: all 0.3s ease;
         }
-    
+
         .cta:hover:before {
             width: 100%;
             background: vars.$hoverColor;
         }
-    
+
         .cta:hover svg {
             transform: translateX(0);
+            stroke: vars.$darkgrey;
         }
-    
+
         .cta:active {
             transform: scale(0.95);
         }
 
-    }    
+    }
+
+    .socialMLinks {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        text-align: left;
+
+        li {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 0 20px 5px 20px;
+            font-family: vars.$fontFamily2;
+            
+            .sLinks {
+                letter-spacing: 0.1rem;
+                word-spacing: 0.1rem;
+                width: 250px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-size: 1rem;
+            }
+
+            span {
+                font-size: 1rem;
+                margin-right: 0.6rem;
+                color: vars.$defaultColor;
+                border: 2px solid vars.$hoverColor;
+                padding: 5px;
+                border-radius: 50px 50px 50px 50px;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    //   color: vars.$darkgrey;
+                    color: vars.$whiteSmoke;
+                    //   background-color: vars.$hoverColor;
+                    //   border-color: vars.$CDE8E5;
+                    border-color: vars.$defaultColor;
+                    border-radius: 50px 50px 10px 50px;
+                }
+            }
+
+
+
+        }
+    }
 
 
 
