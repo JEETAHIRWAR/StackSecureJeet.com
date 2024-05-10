@@ -24,13 +24,14 @@ function Navbar()
 {
   return (
     <>
-      <div className="navbarContainer">
-        <nav className="navbar">
+      {/* <div className="navbarContainer"> */}
+        <nav className="navbarContainer">
           <ul className="navbar-links">
             <li>
-              {/* <span className="tooltip">Home</span> */}
+              {/* <div className="tooltip .tooltip-home">Home</div> */}
               <NavLink
                 to="Home"
+                
                 className={({ isActive }) =>
                   `navLink block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-violet-500 transform scale-125" : "text-green-500"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-violet-500 lg:p-0`
                 }
@@ -203,7 +204,7 @@ function Navbar()
             </li>
           </ul>
         </nav>
-      </div>
+      {/* </div> */}
     </>
   )
 }

@@ -83,7 +83,7 @@ function ProfileContainer()
             </svg>
           </NavLink>
         </div>
-        <div className="socialMLinks">
+        <div className="personalInfo">
           <ul>
             <li>
               <span>
@@ -116,6 +116,13 @@ function ProfileContainer()
               <NavLink to="https://github.com/JEETAHIRWAR" className={({ isActive }) => `sLinks ${isActive ? "text-violet-500 " : "text-green-500"} hover:text-violet-500`}>
                  26-June-2002
               </NavLink>
+            </li>
+          </ul>
+        </div>
+        <div className="socialMLinks">
+          <ul>
+            <li>
+              
             </li>
           </ul>
         </div>
