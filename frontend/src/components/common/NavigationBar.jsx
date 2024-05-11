@@ -45,7 +45,7 @@ function NavigationBar() {
           <li>
             {/* <div className="tooltip .tooltip-home">Home</div> */}
             <NavLink
-              to="Home"
+              to="/"
               className={({ isActive }) =>
                 `navLink block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-violet-500 transform scale-125" : "text-green-500"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-violet-500 lg:p-0`
               }

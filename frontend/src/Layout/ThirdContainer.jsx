@@ -1,7 +1,8 @@
 import React from "react";
+import "./thirdContainer.scss";
 
 function ThirdContainer({ children }) {
-  return <div style={{ background: "skyblue" }}>{children}</div>;
+  return <div className="thirdContainer">{children}</div>;
 }
 
 export default ThirdContainer;

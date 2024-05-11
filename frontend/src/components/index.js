@@ -4,7 +4,6 @@ import SignInForm from "./SignIn/SignInForm";
 import SignUpForm from "./SignUp/SignUpForm";
 import NavigationBar from "./common/NavigationBar";
 import UserProfile from "./common/UserProfile";
-import MainContainer from "./common/MainContainer"
 
 
 
@@ -16,5 +15,4 @@ export
     SignUpForm,
     NavigationBar,
     UserProfile,
-    MainContainer
 };

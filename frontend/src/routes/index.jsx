@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 import {
   Home,
@@ -29,7 +34,7 @@ const AppRoutes = () => {
     <Router>
       <Background />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projects />} />
@@ -47,6 +52,7 @@ const AppRoutes = () => {
         <Route path="/signUp" element={<SignUpForm />} />
         <Route path="/signIn" element={<SignInForm />} />
         <Route path="/adminPanel" element={<AdminPanel />} />
+        <Route path="/home" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );

@@ -1,8 +1,10 @@
+@use "../variables" as vars;
+
 .thirdContainer {
   width: 1060px;
   height: 530px;
-  background: rgb(56, 189, 248, 0.1);
-  backdrop-filter: blur(10px);
+  background: vars.$layoutBackground;
+  backdrop-filter: vars.$glassBackground;
   border-radius: 5px;
 }
 
