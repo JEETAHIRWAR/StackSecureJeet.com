@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./ProfileContainer.scss";
+import "./UserProfile.scss";
 import { Link, NavLink } from "react-router-dom";
 import { MdVerified, MdEmail } from "react-icons/md";
 import { SiGooglemaps, SiLinkedin } from "react-icons/si";
@@ -12,7 +12,7 @@ import {
   FaSquareXTwitter,
 } from "react-icons/fa6";
 
-function ProfileContainer() {
+function UserProfile() {
   const [count, setCount] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
@@ -26,14 +26,16 @@ function ProfileContainer() {
           setDisplayText(displayText + professions[count][charIndex]);
           setCharIndex(charIndex + 1);
         } else {
-          // Move to the next profession
-          setCharIndex(0);
-          setCount(count + 1);
-          setDisplayText("");
+          // Move to the next profession after 2 seconds delay
+          setTimeout(() => {
+            setCharIndex(0);
+            setCount(count + 1);
+            setDisplayText("");
+          }, 1000);
         }
       }, 200);
 
-      // Toggle cursor visibility every 500ms
+      // Toggle cursor visibility every 300ms
       const cursorInterval = setInterval(() => {
         setShowCursor((prevShowCursor) => !prevShowCursor);
       }, 200);
@@ -68,7 +70,7 @@ function ProfileContainer() {
           <NavLink
             to="/resume"
             className={({ isActive }) =>
-              `cta  ${isActive ? "text-violet-500" : "text-green-500"}`
+              `cta ${isActive ? "text-violet-500" : "text-green-500"}`
             }
           >
             <span>Resume</span>
@@ -79,7 +81,7 @@ function ProfileContainer() {
           </NavLink>
         </div>
         <div className="personalInfo">
-          <ul>
+          <ul style={{ margin: 0, padding: 0 }}>
             <li>
               <span>
                 <SiGooglemaps />
@@ -195,4 +197,4 @@ function ProfileContainer() {
   );
 }
 
-export default ProfileContainer;
+export default UserProfile;

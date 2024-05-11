@@ -1,4 +1,4 @@
-@use './variables' as vars;
+@use "./variables" as vars;
 
 /* #root {
   max-width: 1280px;
@@ -11,8 +11,6 @@
   background-color: blanchedalmond;
 } */
 
-
-
 .layout-container {
   // overflow: scroll;
   display: grid;
@@ -22,7 +20,6 @@
   // position: relative;
   // z-index: -1;
 }
-
 
 .pc1 {
   grid-area: 1 / 1 / span 2 / span 3;
@@ -37,6 +34,21 @@
 .pc3 {
   max-width: 1040px;
 }
+
+// admin panel button css
+
+// .adminPanel {
+//   position: absolute;
+//   top: 50px;
+//   left: 0px;
+//   border: none;
+//   color: white;
+//   padding: 8px 16px;
+//   font-size: 16px;
+//   cursor: pointer;
+//   background-color: #ff7f56;
+//   z-index: 999;
+// }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -60,26 +72,25 @@
 
 // }
 
-
 // @media only screen and (min-width: 1025px) {
 
 //   .pc2{
 //     max-width: 1060px;
 //   }
-  
+
 //   .pc3{
 //     max-width: 1060px;
 //   }
-  
+
 // }
 
 // @media only screen and (min-width: 1500px) {
 //   .pc2{
 //     min-width: 1260px;
 //   }
-  
+
 //   .pc3{
 //     min-width: 1260px;
 //   }
-  
+
 // }

@@ -1,0 +1,38 @@
+.thirdContainer {
+  width: 1060px;
+  height: 530px;
+  background: rgb(56, 189, 248, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 5px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .thirdContainer {
+    max-width: 370px;
+    min-height: 500px;
+    margin-bottom: 120px;
+  }
+}
+
+/* Extra small devices (phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .thirdContainer {
+    width: 96%;
+    min-height: 500px;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .thirdContainer {
+    width: 97%;
+    min-height: 100px;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .thirdContainer {
+    width: 100%;
+    min-height: 100px;
+  }
+}

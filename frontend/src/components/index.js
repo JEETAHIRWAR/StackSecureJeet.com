@@ -1,15 +1,20 @@
 import Input from "./Input/Input";
-import Navbar from "./Navbar/Navbar";
-import MainContainer from "./Container/MainContainer";
-import ProfileContainer from "./Container/ProfileContainer";
 import Button from "./Button/Button";
+import SignInForm from "./SignIn/SignInForm";
+import SignUpForm from "./SignUp/SignUpForm";
+import NavigationBar from "./common/NavigationBar";
+import UserProfile from "./common/UserProfile";
+import MainContainer from "./common/MainContainer"
+
 
 
 export
 {
-    Navbar,
     Input,
-    MainContainer,
-    ProfileContainer,
-    Button
+    Button,
+    SignInForm,
+    SignUpForm,
+    NavigationBar,
+    UserProfile,
+    MainContainer
 };
