@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
 
-function Input() {
+function Input({ type, placeholder, value, onChange }) {
   return (
-    <div>
-      Input Boxes
-    </div>
-  )
+    <input
+      type={type}
+      placeholder={placeholder}
+      value={value}
+      onChange={onChange}
+    />
+  );
 }
 
-export default Input
+export default Input;

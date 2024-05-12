@@ -3,12 +3,20 @@ $layoutBackground: rgba(56, 189, 248, 0.1);
 // $layoutBackground: rgb(248, 203, 56);
 $layoutBackground2: rgba(3, 47, 66, 1);
 $glassBackground: blur(10px);
+$blur: blur(3px);
 
 $defaultColor: #22c55e;
 $hoverColor: #8b5cf6;
 $darkgrey: #0a1f1d;
+$darkTransparent: rgb(10, 31, 29, 0.5);
 $whiteSmoke: whitesmoke;
 $navajowhite: navajowhite;
+
+$white: hsl(0, 0%, 100%);
+$black: hsl(240, 15%, 9%);
+$paragraph: hsl(0, 0%, 83%);
+$line: hsl(240, 9%, 17%);
+$primary: hsl(266, 92%, 58%);
 
 $CDE8E5: #ffd0d08c;
 
@@ -18,6 +26,8 @@ $heading: 36px;
 $subHeading: 20px;
 $normalText: 18px;
 $smallText: 14px;
+
+$borderRadius: 5px;
 
 $fontFamily1: "Averia Libre", system-ui;
 $fontFamily2: "Tilt Neon", sans-serif;

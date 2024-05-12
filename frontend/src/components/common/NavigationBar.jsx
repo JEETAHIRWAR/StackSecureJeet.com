@@ -5,6 +5,7 @@ import {
   FaHouseChimneyUser,
   FaBriefcase,
   FaMedal,
+  FaAward,
   FaUserGear,
   FaUsersGear,
   FaBlog,
@@ -123,7 +124,8 @@ function NavigationBar() {
                 `navLink block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-violet-500 transform scale-125" : "text-green-500"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-violet-500 lg:p-0`
               }
             >
-              <FaMedal style={{ fontSize: "2.50rem" }} />
+              {/* <FaMedal style={{ fontSize: "2.50rem" }} /> */}
+              <FaAward style={{ fontSize: "2.50rem" }} />
             </NavLink>
           </li>
           <li>
