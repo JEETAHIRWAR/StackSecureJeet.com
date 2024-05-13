@@ -36,10 +36,10 @@ function SignInForm() {
     e.preventDefault();
     try {
       const response = await axios.post("/api/v1/auth/login", formData);
-      console.log(response.data);
+      console.log("Sign In Successfully ", response.data);
       // Handle successful login (e.g., store user token, redirect user)
     } catch (error) {
-      console.error(error.response.data);
+      console.error("Sign In Error", error.response?.data || error.message);
       // Handle login error (e.g., show error message to user)
     }
   };
@@ -68,7 +68,7 @@ function SignInForm() {
             <span className="flex flex-row items-center mr-2">
               <FaLongArrowAltRight />|
             </span>
-            <p className="text ">[ Sign In / Register ]</p>
+            <p className="text ">[ Sign In / Login ]</p>
             <div className="absolute w-8 h-12 border-b-2 border-l-2 rounded-sm	border-white mt-11"></div>
             <div className="absolute left-10 mts top-24 ">
               <TbArrowRightCircle className="text-xl" />

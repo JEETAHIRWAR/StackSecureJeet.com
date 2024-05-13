@@ -1,9 +1,26 @@
 import bcrypt from 'bcrypt';
 import { User } from '../models/user.model.js';
 import { ApiError } from '../utils/ApiError.js';
+import { asyncHandler } from "../utils/asyncHandler.js";
+
+
+// const registerUser = asyncHandler(async (req, res) =>
+// {
+//     return res.status(200).json({
+//         message: "User registered successfully",
+//     })
+// })
+
+
+// export { registerUser }
+
+
+
+
+
 
 // Controller function for user registration
-export const registerUser = async (req, res, next) =>
+export const registerUser = asyncHandler(async (req, res, next) =>
 {
     try
     {
@@ -21,9 +38,9 @@ export const registerUser = async (req, res, next) =>
 
         // Create new user
         const newUser = new User({
-            username,
             email,
             fullName,
+            username,
             password: hashedPassword
         });
 
@@ -33,12 +50,14 @@ export const registerUser = async (req, res, next) =>
         res.status(201).json({ message: 'User registered successfully' });
     } catch (error)
     {
-        next(error);
+        console.error('Error occurred during password hashing:', error);
+        throw new Error('Error occurred during password hashing');
+        // next(error);
     }
-};
+});
 
 // Controller function for updating user profile
-export const updateUserProfile = async (req, res, next) =>
+export const updateUserProfile = asyncHandler(async (req, res, next) =>
 {
     try
     {
@@ -53,4 +72,4 @@ export const updateUserProfile = async (req, res, next) =>
     {
         next(error);
     }
-};
+});

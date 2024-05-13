@@ -33,7 +33,14 @@ app.use("/api/v1/auth", authRouter);
 // Default route
 app.get("/", (req, res) =>
 {
-    res.send("Welcome to the MERN stack application!");
+    res.send("Welcome to the Portfolio application!");
+});
+
+
+const port = process.env.PORT || 3000;
+app.listen(port, () =>
+{
+    console.log(`Server at http://localhost:${port}`);
 });
 
 export { app }

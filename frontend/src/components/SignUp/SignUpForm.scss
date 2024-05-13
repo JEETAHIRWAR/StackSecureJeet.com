@@ -1,0 +1,22 @@
+@use "../../variables" as vars;
+
+.signUpContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: vars.$fontFamily2;
+
+  .text {
+    font-family: vars.$fontFamily1;
+  }
+
+  .mts {
+    margin-left: 1px;
+    margin-top: 32.2px;
+  }
+  .mt {
+    margin-top: 2.5px;
+  }
+}
