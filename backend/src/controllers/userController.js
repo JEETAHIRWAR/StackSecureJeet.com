@@ -4,27 +4,13 @@ import { ApiError } from '../utils/ApiError.js';
 import { asyncHandler } from "../utils/asyncHandler.js";
 
 
-// const registerUser = asyncHandler(async (req, res) =>
-// {
-//     return res.status(200).json({
-//         message: "User registered successfully",
-//     })
-// })
-
-
-// export { registerUser }
-
-
-
-
-
-
 // Controller function for user registration
 export const registerUser = asyncHandler(async (req, res, next) =>
 {
     try
     {
         const { username, email, fullName, password } = req.body;
+        const userIP = req.ip;
 
         // Check if user already exists
         const existingUser = await User.findOne({ email });
@@ -41,7 +27,8 @@ export const registerUser = asyncHandler(async (req, res, next) =>
             email,
             fullName,
             username,
-            password: hashedPassword
+            password: hashedPassword,
+            userIP // Add userIP to user document
         });
 
         // Save user to database
@@ -56,20 +43,39 @@ export const registerUser = asyncHandler(async (req, res, next) =>
     }
 });
 
-// Controller function for updating user profile
-export const updateUserProfile = asyncHandler(async (req, res, next) =>
+
+export const getUserData = async (req, res) =>
 {
     try
     {
-        const { fullName } = req.body;
-        const userId = req.user._id; // Assuming userId is available in request object after authentication
+        // Access user data from the request object
+        const userData = req.userData;
 
-        // Find user by ID and update profile
-        await User.findByIdAndUpdate(userId, { fullName });
-
-        res.status(200).json({ message: 'Profile updated successfully' });
+        res.status(200).json(userData);
     } catch (error)
     {
-        next(error);
+        console.error('Error fetching user data:', error);
+        res.status(500).json({ message: 'Internal server error' });
     }
-});
+};
+
+
+
+
+// // Controller function for updating user profile
+// export const updateUserProfile = asyncHandler(async (req, res, next) =>
+// {
+//     try
+//     {
+//         const { fullName } = req.body;
+//         const userId = req.user._id; // Assuming userId is available in request object after authentication
+
+//         // Find user by ID and update profile
+//         await User.findByIdAndUpdate(userId, { fullName });
+
+//         res.status(200).json({ message: 'Profile updated successfully' });
+//     } catch (error)
+//     {
+//         next(error);
+//     }
+// });

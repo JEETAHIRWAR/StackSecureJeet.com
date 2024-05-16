@@ -27,6 +27,10 @@ export const loginUser = asyncHandler(async (req, res, next) =>
             throw new ApiError(401, 'Invalid email or password');
         }
 
+
+        user.lastLoginIP = req.ip;
+        await user.save();
+
         // Generate JWT token
         const accessToken = user.generateAccessToken();
 
@@ -51,7 +55,7 @@ export const logoutUser = asyncHandler(async (req, res, next) =>
     }
 });
 
-// export default { loginUser, logoutUser };
+export default { loginUser, logoutUser };
 
 
 

@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import axios from "axios";
+// import { useDispatch } from "react-redux";
+// import { signUpUser } from "../../actions/userActions";
 import {
   FirstContainer,
   SecondContainer,
@@ -21,19 +23,27 @@ import {
   FaKey,
 } from "react-icons/fa6";
 import { HiTerminal } from "react-icons/hi";
-import { FaLongArrowAltRight } from "react-icons/fa";
+import { FaLongArrowAltRight, FaUserEdit } from "react-icons/fa";
 import { TbArrowRightCircle, TbArrowBadgeRightFilled } from "react-icons/tb";
+import { PiTextboxFill } from "react-icons/pi";
 
 const SignUpForm = () => {
+  // const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     username: "",
     email: "",
+    fullName: "",
     password: "",
   });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   dispatch(signUpUser(formData));
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -129,21 +139,23 @@ const SignUpForm = () => {
           <div>
             <form onSubmit={handleSubmit}>
               <input
-                className="absolute text-green-500 bg-transparent top-32 left-20 w-72 outline-none focus:border-violet-500 border-transparent border-2 rounded px-1 py-0"
+                className="absolute text-green-500 bg-transparent top-32 mt-[-3px] left-20 w-72 outline-none focus:border-violet-500 border-transparent border-2 rounded px-1 py-0"
                 type="text"
                 name="username"
                 value={formData.username}
                 onChange={handleChange}
                 placeholder="Username"
               />
+              <FaUserEdit className="absolute top-28 mt-[17px] text-lg left-80 ml-5 text-slate-400 " />
               <input
-                className="absolute text-green-500 bg-transparent top-48 left-20 w-72 outline-none focus:border-violet-500 border-transparent border-2 rounded px-1 py-0"
+                className="absolute text-green-500 bg-transparent top-48 mt-[-3px] left-20 w-72 outline-none focus:border-violet-500 border-transparent border-2 rounded px-1 py-0"
                 type="text"
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
                 placeholder="Full Name"
               />
+              <PiTextboxFill className="absolute top-44 text-lg mt-[17px] left-80 ml-5 text-slate-400 " />
               <input
                 className="absolute text-green-500 bg-transparent top-60 mt-[13px] left-20 w-72 outline-none focus:border-violet-500 border-transparent border-2 rounded px-1 py-0"
                 type="email"
@@ -163,7 +175,7 @@ const SignUpForm = () => {
               />
               <FaKey className="absolute left-80 ml-5 text-slate-400 top-80 mt-[3px]" />
               <button
-                className="text absolute rounded-md top-96 mt-8 left-10 text-white hover:text-green-500"
+                className="btn text absolute top-96 mt-8 left-10 text-violet-500"
                 type="submit"
               >
                 [ Sign Up ]

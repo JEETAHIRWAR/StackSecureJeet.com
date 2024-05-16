@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+// import { useDispatch } from "react-redux";
+// import { signInUser } from "../../actions/userActions";
 import {
   FirstContainer,
   SecondContainer,
@@ -23,6 +25,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { TbArrowRightCircle, TbArrowBadgeRightFilled } from "react-icons/tb";
 
 function SignInForm() {
+  // const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -31,6 +34,11 @@ function SignInForm() {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   dispatch(signInUser(formData));
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -101,7 +109,7 @@ function SignInForm() {
           <div>
             <form onSubmit={handleSubmit}>
               <input
-                className="absolute text-green-500 bg-transparent top-32 left-20 w-72 outline-none focus:border-violet-500 border-transparent border-2 rounded px-1 py-0"
+                className="absolute text-green-500 bg-transparent mt-[-3px] top-32 left-20 w-72 outline-none focus:border-violet-500 border-transparent border-2 rounded px-1 py-0"
                 type="email"
                 name="email"
                 value={formData.email}
@@ -110,7 +118,7 @@ function SignInForm() {
               />
               <FaAt className="absolute top-32 left-80 ml-5 text-slate-400 mt-1" />
               <input
-                className="absolute text-green-500 bg-transparent top-48 left-20 w-72 outline-none focus:border-violet-500 border-transparent border-2 rounded px-1 py-0"
+                className="absolute text-green-500 bg-transparent mt-[-3px] top-48 left-20 w-72 outline-none focus:border-violet-500 border-transparent border-2 rounded px-1 py-0"
                 type="password"
                 name="password"
                 value={formData.password}
@@ -119,7 +127,7 @@ function SignInForm() {
               />
               <FaKey className="absolute top-48 left-80 ml-5 text-slate-400 mt-1" />
               <button
-                className="text absolute rounded-md top-64 mt-8 left-10 text-white hover:text-green-500"
+                className="text absolute rounded-md top-64 mt-8 left-10 text-violet-500 outline-none bg-transparent btn "
                 type="submit"
               >
                 [ Sign In ]

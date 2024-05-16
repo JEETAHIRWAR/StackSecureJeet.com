@@ -23,11 +23,23 @@ app.use(cookieParser());
 // routes import
 import userRouter from "./routes/userRoutes.js"; // Import user routes
 import authRouter from "./routes/authRoutes.js"; // Import authentication routes
+import adminDataRouter from "./routes/adminDataRoutes.js"; // Import authentication routes
+import userDataMiddleware from "./middlewares/user.middleware.js"; // Import authentication routes
+
 
 
 // routes declaration
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/admin/data/:id", adminDataRouter);
+// app.get('/api/v1/user-data', captureUserIP, getUserData);
+
+
+app.use(userDataMiddleware);
+
+
+
+
 
 
 // Default route

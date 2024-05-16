@@ -29,6 +29,10 @@ const userSchema = new Schema(
             type: String,
             required: [true, 'Password is required'],
         },
+        userIP: {
+            type: String,
+            required: true
+        },
         refreshToken: {
             type: String,
         }

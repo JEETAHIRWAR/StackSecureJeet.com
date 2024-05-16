@@ -5,6 +5,14 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+// import { Provider } from "react-redux";
+// import store from "../redux/store";
+
+// import {
+//   HomeContainer,
+//   AboutContainer,
+//   // Other container components
+// } from "../containers/index";
 
 import {
   Home,
@@ -31,6 +39,7 @@ import AdminPanel from "../pages/Admin/AdminPanel";
 
 const AppRoutes = () => {
   return (
+    // <Provider store={store}>
     <Router>
       <Background />
       <Routes>
@@ -55,6 +64,7 @@ const AppRoutes = () => {
         <Route path="/home" element={<Navigate to="/" />} />
       </Routes>
     </Router>
+    // </Provider>
   );
 };
 
